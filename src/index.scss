@@ -1,0 +1,9 @@
+@import './custom.scss';
+@import '~bootstrap/scss/bootstrap.scss';
+
+a:hover{
+  color: black;
+}
+
+html {margin-right: calc(-1 * (100vw - 100%));}
+

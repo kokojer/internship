@@ -1,0 +1,46 @@
+.buttonBack:hover span{
+  @media (min-width: 960px) {
+    font-weight: 500;
+  }
+}
+
+.notifications{
+  display: none;
+}
+.active{
+  display: block;
+  background-color: #f8f8f8;
+  border: 1px solid black;
+  padding: 20px;
+  top:100%;
+  width: 300px;
+  max-height: 300px;
+  overflow: auto;
+  right: -20px;
+  border-radius: 4px;
+  @media (max-width: 720px) {
+    width: 200px;
+
+  }
+  div{
+    font-size: 15px;
+
+    padding-bottom: 10px;
+    padding-top: 10px;
+    border-bottom: 1px solid black;
+    @media (max-width: 720px) {
+
+      font-size: 13px;
+
+    }
+  }
+  div:first-child{
+    padding-top: 0;
+  }
+  div:last-child{
+    padding-bottom: 0;
+    border-bottom: none;
+  }
+  position: absolute;
+}
+
