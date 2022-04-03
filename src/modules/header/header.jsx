@@ -8,13 +8,13 @@ import {useState} from "react";
 export const Header = () => {
     const [showNotifications, setShowNotifications] = useState('')
 
-    function toggleNotifications(){
-        if(showNotifications === ''){
-            setShowNotifications(s.active)
-        }else{
-            setShowNotifications("")
+    function toggleNotifications(e){
+        if(!e.target.closest('[data-id="notif"]')) {
+            showNotifications === '' ? setShowNotifications(s.active) : setShowNotifications("")
         }
     }
+
+
     return (
     <header className="header py-2 py-lg-2_5 border-bottom">
         <Container>
@@ -29,7 +29,7 @@ export const Header = () => {
                     <div className="d-flex justify-content-between">
                         <div role='button' className={"p-2 " + s.imgContainer} title="Notifications" onClick={toggleNotifications}>
                             <img src={bell} alt="bell"/>
-                            <div className={s.notifications + " " + showNotifications}>
+                            <div className={s.notifications + " " + showNotifications} data-id='notif'>
                                 <div>James wrote a comment under your post</div>
                                 <div>Maria put a like on your video</div>
                                 <div>Try the new feature of our app</div>

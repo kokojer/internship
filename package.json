@@ -25,7 +25,7 @@
     "@babel/polyfill": "^7.12.1",
     "@testing-library/jest-dom": "^5.16.3",
     "bootstrap": "^4.6.1",
-    "core-js": "^2.5.7",
+    "core-js": "^3.21.1",
     "fast-text-encoding": "^1.0.3",
     "history": "^5.2.0",
     "immer": "^8.0.1",
@@ -43,7 +43,9 @@
     "react-router-dom": "^6.2.1",
     "redux": "^4.1.2",
     "sass": "^1.49.7",
-    "sass-loader": "^12.4.0"
+    "sass-loader": "^12.4.0",
+    "svg4everybody": "^2.1.9",
+    "svgxuse": "^1.2.6"
   },
   "devDependencies": {
     "@babel/core": "^7.13.10",

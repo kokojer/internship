@@ -1,0 +1,42 @@
+$color: default 'gray';
+
+.navbutton{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 14px;
+  border-bottom: 3px solid transparent;
+  letter-spacing: 0.015em;
+  color: #6E7178;
+  fill:gray;
+
+  div{
+    margin-top: 1px;
+  }
+
+}
+
+.notes{
+  stroke: gray;
+}
+.notes:hover{
+  stroke: black;
+}
+.navbutton:hover{
+  text-decoration: none;
+  fill:black;
+}
+
+button.dropdownToggle{
+  background-color: transparent;
+  border: 0;
+}
+button.dropdownToggle:hover{
+  background-color: transparent;
+}
+button.dropdownToggle:focus{
+  background-color: transparent;
+  outline: 0;
+}
