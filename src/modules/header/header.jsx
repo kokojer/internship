@@ -1,47 +1,46 @@
-import bell from './bell.svg'
-import arrow from './arrow.svg'
-import person from './person.svg'
 import {Container, Row, Col} from "react-bootstrap";
 import s from "./header.module.scss"
-import {useState} from "react";
+import si from './../icons/icons.module.scss'
+
+import {Arrowicon} from "../icons/arrowicon";
+
+import {NavLink, Router} from "react-router-dom";
+import {Manicon} from "../icons/manicon";
+import {Notificationsdropdown} from "./notificationdropdown/notificationsdropdown";
 
 export const Header = () => {
-    const [showNotifications, setShowNotifications] = useState('')
 
-    function toggleNotifications(e){
-        if(!e.target.closest('[data-id="notif"]')) {
-            showNotifications === '' ? setShowNotifications(s.active) : setShowNotifications("")
-        }
-    }
+    let activeStyle = {
+        fill: '#2375E1',
+        color: '#2375E1'
+    };
 
 
     return (
     <header className="header py-2 py-lg-2_5 border-bottom">
         <Container>
-            <Row>
-                <Col className='d-flex justify-content-start'>
-                    <div role='button' className={"d-flex justify-content-between align-items-center " + s.buttonBack}>
-                        <img src={arrow} alt="arrow" className="mr-3"/>
-                        <span className="mt-0_5">User Pages</span>
-                    </div>
-                </Col>
-                <Col className='d-flex justify-content-end'>
-                    <div className="d-flex justify-content-between">
-                        <div role='button' className={"p-2 " + s.imgContainer} title="Notifications" onClick={toggleNotifications}>
-                            <img src={bell} alt="bell"/>
-                            <div className={s.notifications + " " + showNotifications} data-id='notif'>
-                                <div>James wrote a comment under your post</div>
-                                <div>Maria put a like on your video</div>
-                                <div>Try the new feature of our app</div>
-                                <div>Add more information to your profile so that your friends can find about you</div>
+
+                <Row>
+                    <Col className='d-flex justify-content-start'>
+                        <div role='button' className={"d-flex justify-content-between align-items-center " + si.buttonBack + ' ' + s.buttonBack}>
+                            <Arrowicon width='20' height='12' style={{transform:'rotate(90deg)'}}/>
+                            <span className="mt-0_5 ml-2">User Pages</span>
+                        </div>
+                    </Col>
+                    <Col className='d-flex justify-content-end'>
+                        <div className="d-flex justify-content-between">
+                            <Notificationsdropdown />
+                            <div role='button' className={"p-2"}>
+                                <NavLink to='account' className={s.navbutton} style={({ isActive }) =>
+                                    isActive ? activeStyle : undefined
+                                }>
+                                    <Manicon />
+                                </NavLink>
                             </div>
                         </div>
-                        <div role='button' className={"p-2 " + s.imgContainer} title="Personal Account">
-                            <img src={person} alt="person"/>
-                        </div>
-                    </div>
-                </Col>
-            </Row>
+                    </Col>
+                </Row>
+
         </Container>
 
     </header>
