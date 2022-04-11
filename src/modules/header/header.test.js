@@ -1,30 +1,39 @@
 
-
+import React from "react";
 import {Header} from "./header";
 import {render,screen} from "@testing-library/react"
-
+import {BrowserRouter} from "react-router-dom";
 describe("Header", () => {
 
-    test("should contain image alt='arrow'", () => {
-        render(<Header />)
-        const el = screen.getByAltText(/arrow/i);
-        expect(el).toBeInTheDocument();
+    test("should contain image svg arrow", () => {
+        render(
+            <BrowserRouter>
+                <Header />
+            </BrowserRouter>
+        )
+        expect(screen.getByTestId('arrow')).toBeInTheDocument();
     });
 
-    test("should contain image alt='bell'", () => {
-        render(<Header />)
-        const el = screen.getByAltText(/bell/i);
-        expect(el).toBeInTheDocument();
+    test("should contain image svg bell", () => {
+        render(
+            <BrowserRouter>
+                <Header />
+            </BrowserRouter>
+        )
+        expect(screen.getByTestId('bell')).toBeInTheDocument();
     });
 
-    test("should contain image alt='person'", () => {
-        render(<Header />)
-        const el = screen.getByAltText(/person/i);
-        expect(el).toBeInTheDocument();
+    test("should contain image svg person", () => {
+        render(<BrowserRouter>
+            <Header />
+        </BrowserRouter>)
+        expect(screen.getByTestId('person')).toBeInTheDocument();
     });
 
     test("should contain text 'User Pages'", () => {
-        render(<Header />)
+        render(<BrowserRouter>
+            <Header />
+        </BrowserRouter>)
         const el = screen.getByText(/User Pages/i);
         expect(el).toBeInTheDocument();
     });

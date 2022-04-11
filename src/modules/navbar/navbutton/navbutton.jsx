@@ -1,27 +1,17 @@
 import {Container, Row, Col} from "react-bootstrap";
 import {NavLink} from "react-router-dom";
 import s from '../navbar.module.scss'
-import mediaQuery from "react-responsive/src/mediaQuery";
+import si from '../../icons/icons.module.scss'
+
 
 export const Navbutton = ({textButton, img}) => {
-    let activeStyle = {
-        fill: '#2375E1',
-        borderBottom: '3px solid #2375E1',
-        color: '#2375E1'
-    };
 
-    let activeNotesStyle = {
-        stroke: '#2375E1',
-        borderBottom: '3px solid #2375E1',
-        color: '#2375E1'
-
-    };
+    let staticStylesTextButton = 'pt-sm-3 pb-sm-2_5 pt-2 pb-2 mr-md-3 mr-0 px-2 px-md-0 ' + s.navbutton + (textButton === 'Notes' ? " " + si.notes : '');
 
     return (
-        <NavLink to={textButton.toLowerCase()} className={'pt-3 pb-2_5 mr-3 ' + s.navbutton + (textButton === 'Notes' ? " " + s.notes : '')} style={({ isActive }) =>
-            isActive && textButton !== 'Notes' ? activeStyle : isActive ? activeNotesStyle : undefined
-        }>
+        <NavLink to={textButton.toLowerCase()} className={({ isActive }) =>
+            isActive && textButton !== 'Notes' ? `${s.activeStyle} ${staticStylesTextButton}` : isActive ? `${s.activeNotesStyle} ${staticStylesTextButton}`: staticStylesTextButton}>
             {img}
-            <div className="ml-2">{textButton}</div>
+            <div className="ml-md-2 ml-0">{textButton}</div>
         </NavLink>
 )}

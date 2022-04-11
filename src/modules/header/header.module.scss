@@ -7,6 +7,15 @@
 .notifications{
   display: none;
 }
+.navbutton{
+  fill:gray;
+}
+
+.navbutton:hover{
+  text-decoration: none;
+  fill:black;
+}
+
 .active{
   display: block;
   background-color: #f8f8f8;
@@ -44,4 +53,6 @@
   }
   position: absolute;
 }
+
+
 
