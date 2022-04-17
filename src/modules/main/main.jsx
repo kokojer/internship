@@ -9,11 +9,13 @@ import {Photos} from "./photos/photos";
 import {Account} from "./account/account";
 
 export const Main = () => {
-
+    if(/.+\/$/.test(window.location.href)){
+        window.location.href = '/activity'
+    }
     return (
-        <main style={{background: '#E5E5E5'}} className='h-100'>
+        <main style={{background: '#E5E5E5', flex:'1 1 auto'}}>
             <Container>
-                <Row className='p-4'>
+                <Row className='py-4 px-2'>
                     <Routes>
                         <Route path="/map" element={<Map/>}/>
                         <Route path="/time" element={<Time/>}/>

@@ -7,3 +7,23 @@ a:hover{
 
 html {margin-right: calc(-1 * (100vw - 100%));}
 
+.cur-point{
+  cursor: pointer;
+}
+
+body{
+  overflow-x: hidden;
+}
+
+html, body {
+  height: 100%;
+}
+
+.wrapper{
+  min-height: 100%;
+}
+
+#root{
+  min-height: 100%;
+}
+
