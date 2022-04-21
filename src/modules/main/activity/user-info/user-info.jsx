@@ -1,8 +1,11 @@
 import {Container, Row, Col, DropdownButton, Dropdown} from "react-bootstrap";
+import {Userimg} from "./userImg/userImg";
+import {UserNavigation} from "./userNavigation/userNavigation";
 export const UserInfo = () => {
 
     return (
-        <article style={{background:"red"}}>
-            wgwrg
-        </article>
+        <aside>
+            <Userimg />
+            <UserNavigation />
+        </aside>
 )}

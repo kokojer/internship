@@ -1,0 +1,51 @@
+@import '~bootstrap/scss/bootstrap.scss';
+
+.imgContainer{
+  width: 144px;
+  height: 144px;
+  border-radius: 50%;
+  overflow: hidden;
+  position: relative;
+  background-image: url("./userImg/myPhoto2.png");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+.imgContainer img{
+
+}
+.link svg path{
+  transition: .3s;
+}
+.link:hover svg path{
+  fill:#0077FF;
+}
+
+.navigationItem svg path{
+  fill:gray;
+  transition: .3s;
+}
+.navigationItem:hover svg path{
+  fill:black;
+}
+
+.navigationItem .notif{
+  padding: 2px 6px;
+  background: #EF4115;
+  border-radius: 14px;
+  font-size: 13px;
+  color:white;
+}
+
+.balance{
+  color: #A1A5AE;
+  font-size: 14px;
+}
+
+
+
+
+
+
+
+

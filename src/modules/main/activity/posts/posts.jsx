@@ -1,28 +1,32 @@
-import {Container, Row, Col, DropdownButton, Dropdown,Accordion} from "react-bootstrap";
+import {Accordion} from "react-bootstrap";
 import {Post} from "./post/post";
-import photo from './photo.png'
-import photo2 from './photo2.jpg'
-import photo3 from './photo3.jpg'
 import postsData from './postsdata.json'
 export const Posts = () => {
     return (
         <Accordion defaultActiveKey="0">
             {postsData.map((item, index) => {
 
-                function getTimeAgo(){
+                function getTimeAgo(item){
                     let dateNow = Date.now();
-                    let datePost = Date.parse(item.time);
-                    let seconds = Math.floor(Math.abs(dateNow-datePost)/(1000))
+                    let datePost = Date.parse(item);
                     let minutes = Math.floor(Math.abs(dateNow-datePost)/(1000 * 60))
                     let hours = Math.floor(Math.abs(dateNow-datePost)/(1000*60*60))
                     let days = Math.floor(Math.abs(dateNow-datePost)/(1000*60*60*24))
-                    let x = new Date(dateNow - datePost)
                     let month = Math.floor(Math.abs(dateNow-datePost)/(1000*60*60*24*30))
                     let years = Math.floor(Math.abs(dateNow-datePost)/(1000*60*60*24*30*12))
-                    console.log(x)
-                    console.log(years)
+                    if(years !== 0){
+                        return `${years} ${years === 1 ? "year" : "years"} ago`
+                    }else if(month !== 0){
+                        return `${month} ${month === 1 ? "month" : "months"} ago`
+                    }else if(days !== 0){
+                        return `${days} ${days === 1 ? "day" : "days"} ago`
+                    }else if(hours !== 0){
+                        return `${hours} ${hours === 1 ? "hour" : "hours"} ago`
+                    }else if(minutes !== 0){
+                        return `${minutes} ${minutes === 1 ? "minute" : "minutes"} ago`
+                    }
                 }
-                getTimeAgo()
+
                 return (
                 <Post
                     title={item.title}
@@ -33,8 +37,8 @@ export const Posts = () => {
                     commentText={item.comment?.commentText}
                     comments={item.comments}
                     views={item.views}
-                    timePostComment={item.comment?.timePostComment}
-                    time={item.time}
+                    timePostComment={getTimeAgo(item.comment?.timePostComment)}
+                    time={getTimeAgo(item.time)}
                     key={index}
                 />
             )})}

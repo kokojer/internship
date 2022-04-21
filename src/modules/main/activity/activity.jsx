@@ -6,10 +6,10 @@ export const Activity = () => {
     return (
        <Col>
            <Row>
-               <Col xs={8}>
+               <Col xs={9} className='pl-1 pr-2'>
                    <Posts />
                </Col>
-               <Col xs={4}>
+               <Col xs={3} className='pr-1 pl-3'>
                    <UserInfo />
                </Col>
            </Row>
