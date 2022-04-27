@@ -1,5 +1,4 @@
-import {Container, Row, Col, DropdownButton, Dropdown} from "react-bootstrap";
-import s from './navbar.module.scss'
+import {Container, Row, Col} from "react-bootstrap";
 import {Navbutton} from "./navbutton/navbutton";
 import {Activityicon} from "../icons/activityicon";
 import {Mapicon} from "../icons/mapicon";

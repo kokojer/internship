@@ -1,8 +1,5 @@
 import s from "../post.module.scss";
-import {Comments} from "../../../../../icons/comments";
-import {Eye} from "../../../../../icons/eye";
-import {Arrowicon} from "../../../../../icons/arrowicon";
-import {Modal, ModalDialog} from "react-bootstrap";
+import {Modal} from "react-bootstrap";
 import {useState} from "react";
 
 export const ModalImg = ({photo}) => {
@@ -19,14 +16,12 @@ export const ModalImg = ({photo}) => {
                 dialogClassName={s.dialog}
                 contentClassName={s.modalContent}
                 centered
-
             >
-
-                    <Modal.Body className='p-2'>
-                        <div className="d-flex justify-content-center">
-                            <img src={photo} alt="" className="img-fluid" style={{maxHeight:'90vh'}}/>
-                        </div>
-                    </Modal.Body>
+                <Modal.Body className='p-2'>
+                    <div className="d-flex justify-content-center">
+                        <img src={photo} alt="" className="img-fluid" style={{maxHeight:'90vh'}}/>
+                    </div>
+                </Modal.Body>
             </Modal>
         </>
     );

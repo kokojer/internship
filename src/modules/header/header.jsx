@@ -4,7 +4,7 @@ import si from './../icons/icons.module.scss'
 
 import {Arrowicon} from "../icons/arrowicon";
 
-import {NavLink, Router} from "react-router-dom";
+import {NavLink} from "react-router-dom";
 import {Manicon} from "../icons/manicon";
 import {Notificationsdropdown} from "./notificationdropdown/notificationsdropdown";
 
@@ -19,7 +19,6 @@ export const Header = () => {
     return (
     <header className="header py-2 py-lg-2_5 border-bottom">
         <Container>
-
                 <Row>
                     <Col className='d-flex justify-content-start'>
                         <div role='button' className={"d-flex justify-content-between align-items-center " + si.buttonBack + ' ' + s.buttonBack}>
@@ -40,8 +39,6 @@ export const Header = () => {
                         </div>
                     </Col>
                 </Row>
-
         </Container>
-
     </header>
 )}

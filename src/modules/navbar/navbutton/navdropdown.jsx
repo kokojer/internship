@@ -1,6 +1,6 @@
 import {Dropdown} from "react-bootstrap";
 import s from './../../icons/icons.module.scss'
-import React, {useState} from "react";
+import React, {useState, useRef} from "react";
 
 import {Serviceicon} from "../../icons/serviceicon";
 import {Arrowicon} from "../../icons/arrowicon";
@@ -23,8 +23,6 @@ export const Navdropdown = () => {
         </a>
     ));
 
-// forwardRef again here!
-// Dropdown needs access to the DOM of the Menu to measure it
     const CustomMenu = React.forwardRef(
         ({ children, style, className, 'aria-labelledby': labeledBy }, ref) => {
             const [value, setValue] = useState('');
@@ -47,23 +45,23 @@ export const Navdropdown = () => {
         },
     );
     let upOrDown = breakPointService ? 'down' : 'up';
+    const drop = useRef(null);
     function classToggle(isOpen){
-        let nav = document.querySelector('nav')
-        let drop = nav.querySelector(`.drop${upOrDown}`);
+
         if(isOpen === true){
             setTimeout(() => {
-                drop.classList.add(s.show)
+                drop.current.classList.add(s.show)
             },0)
 
         }
         if(isOpen === false){
-            drop.classList.remove(s.show)
+            drop.current.classList.remove(s.show)
         }
 
     }
 
     return (
-        <Dropdown onToggle={classToggle} className='h-100 d-flex align-items-center mr-1 mr-sm-0' drop={upOrDown}>
+        <Dropdown onToggle={classToggle} className='h-100 d-flex align-items-center mr-1 mr-sm-0' drop={upOrDown} ref={drop}>
             <Dropdown.Toggle as={CustomToggle} id="dropdown-custom-components" >
                 <Serviceicon />
                 <Arrowicon width='11' height='8'/>

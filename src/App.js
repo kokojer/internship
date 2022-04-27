@@ -1,4 +1,3 @@
-import {Container, Row, Col} from "react-bootstrap";
 import {Header} from "./modules/header/header";
 import {Navbar} from "./modules/navbar/navbar";
 import {Main} from "./modules/main/main";

@@ -1,9 +1,10 @@
-import {Container, Row, Col, DropdownButton, Dropdown,FormControl} from "react-bootstrap";
+import {Dropdown} from "react-bootstrap";
 import s from '../../icons/icons.module.scss'
-import React, {useState} from "react";
+import React, {useState, useRef} from "react";
 
 import {Bellicon} from "../../icons/bellicon";
 import {Notification} from "./notification";
+
 export const Notificationsdropdown = () => {
 
 
@@ -22,8 +23,6 @@ export const Notificationsdropdown = () => {
         </a>
     ));
 
-// forwardRef again here!
-// Dropdown needs access to the DOM of the Menu to measure it
     const CustomMenu = React.forwardRef(
         ({ children, style, className, 'aria-labelledby': labeledBy }, ref) => {
             const [value, setValue] = useState('');
@@ -46,23 +45,23 @@ export const Notificationsdropdown = () => {
             );
         },
     );
+
+    const dropdown = useRef(null);
     function classToggle(isOpen){
-        let header = document.querySelector('header')
-        let dropdown = header.querySelector('.dropdown');
         if(isOpen === true){
             setTimeout(() => {
-                dropdown.classList.add(s.show)
+                dropdown.current.classList.add(s.show)
             },0)
 
         }
         if(isOpen === false){
-            dropdown.classList.remove(s.show)
+            dropdown.current.classList.remove(s.show)
         }
 
     }
 
     return (
-        <Dropdown onToggle={classToggle} alignRight={true} className='d-flex'>
+        <Dropdown onToggle={classToggle} alignRight={true} ref={dropdown} className='d-flex'>
             <Dropdown.Toggle as={CustomToggle} id="dropdown-custom-components">
                 <Bellicon />
             </Dropdown.Toggle>

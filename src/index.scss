@@ -1,29 +1,19 @@
 @import './custom.scss';
 @import '~bootstrap/scss/bootstrap.scss';
 
-a:hover{
-  color: black;
-}
+html, body {height: 100%;}
 
 html {margin-right: calc(-1 * (100vw - 100%));}
 
-.cur-point{
-  cursor: pointer;
-}
+body{overflow-x: hidden;}
 
-body{
-  overflow-x: hidden;
-}
+#root{min-height: 100%;}
 
-html, body {
-  height: 100%;
-}
+.wrapper{min-height: 100%;}
 
-.wrapper{
-  min-height: 100%;
-}
+a:hover{color: black;}
 
-#root{
-  min-height: 100%;
-}
+.cur-point{cursor: pointer;}
+
+
 

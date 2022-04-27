@@ -1,4 +1,3 @@
-import s from './icons.module.scss'
 export const Notesicon = () => {
 
     return (

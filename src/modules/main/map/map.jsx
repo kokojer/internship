@@ -1,6 +1,6 @@
 import {Col, Card, Accordion} from "react-bootstrap";
 import {Arrowicon} from "../../icons/arrowicon";
-import {useState, useCallback} from "react";
+import {useState} from "react";
 import {GoogleMapCustom} from "./googleMap/googleMap";
 
 export const Map = () => {
@@ -8,18 +8,6 @@ export const Map = () => {
     function isOpen(){
         setShow(!show)
     }
-    function doSomething(a, b){
-        return a + b
-    }
-    let x = 5;
-    let y = 6;
-    const memoizedCallback = useCallback(
-        () => {
-            doSomething(x, y);
-        },
-        [x, y],
-    );
-    console.log(memoizedCallback)
     return (
         <Col className='p-0'>
             <Accordion defaultActiveKey="0" style={{ border: '1px solid rgb(221, 224, 230'}}>

@@ -1,4 +1,4 @@
-import {Container, Row, Col, DropdownButton, Dropdown} from "react-bootstrap";
+import {Row, Col} from "react-bootstrap";
 import {Posts} from "./posts/posts";
 import {UserInfo} from "./user-info/user-info";
 export const Activity = () => {

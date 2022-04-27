@@ -1,4 +1,5 @@
 import {Accordion} from "react-bootstrap";
+import React from "react";
 import {Post} from "./post/post";
 import postsData from './postsdata.json'
 export const Posts = () => {

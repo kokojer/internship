@@ -2,10 +2,10 @@ import s from "../post.module.scss";
 import {Comments} from "../../../../../icons/comments";
 import {Eye} from "../../../../../icons/eye";
 import {Arrowicon} from "../../../../../icons/arrowicon";
-import {useState} from "react";
 import {ModalImg} from "../modalImg/modalImg";
+
 export const AccordionBody = ({photo, commentName, commentText, timePostComment, commentSurname, views, comments}) => {
-    const [show, setShow] = useState(false);
+
     return (
         <>
             <ModalImg photo={photo} />

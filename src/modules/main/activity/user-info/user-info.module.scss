@@ -29,6 +29,10 @@
   fill:black;
 }
 
+.navigationItem:hover div:first-child{
+  font-weight: 500;
+}
+
 .navigationItem .notif{
   padding: 2px 6px;
   background: #EF4115;

@@ -11,7 +11,7 @@
       "timePostComment": "2022-04-20T09:01:24",
       "commentText": "The sun disappearing behind the Himalayas. This was taken from near the Tungnath temple (~3500m) in the Garwhal Himalayas near Chopta. I think this is probably my favourite of all of the sunset photos"
     },
-    "img": "/4ede40bca2ccd6ae242b.png"
+    "img": "https://i.ibb.co/m5nHrTV/photo.png"
   },
   {
     "eventKey": "1",
@@ -19,7 +19,8 @@
     "time": "2022-03-05T12:31:24",
     "views": 5,
     "comments": 0,
-    "img": "/d2a4a301db884114a774.jpg"
+    "img": "https://i.ibb.co/RzG7cVq/photo2.jpg"
+
   },
   {
     "eventKey": "2",
@@ -33,6 +34,6 @@
     },
     "views": 4380,
     "comments": 144,
-    "img": "/8e970f0fb4bcdaafa029.jpg"
+    "img": "https://i.ibb.co/ng6t3FY/photo3.jpg"
   }
 ]
