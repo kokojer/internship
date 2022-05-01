@@ -7,13 +7,13 @@ import {Notes} from "./notes/notes";
 import {Friends} from "./friends/friends";
 import {Photos} from "./photos/photos";
 import {Account} from "./account/account";
-
+import s from './main.module.scss'
 export const Main = () => {
     if(/.+\/$/.test(window.location.href)){
         window.location.href = '/activity'
     }
     return (
-        <main style={{background: '#E5E5E5', flex:'1 1 auto'}}>
+        <main style={{flex:'1 1 auto', minHeight: "100%"}} className={s.main}>
             <Container>
                 <Row className='py-4 px-2'>
                     <Routes>

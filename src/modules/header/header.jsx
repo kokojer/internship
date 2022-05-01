@@ -17,7 +17,7 @@ export const Header = () => {
 
 
     return (
-    <header className="header py-2 py-lg-2_5 border-bottom">
+    <header className="header py-2 py-lg-2_5 border-bottom" style={{background: 'white'}}>
         <Container>
                 <Row>
                     <Col className='d-flex justify-content-start'>

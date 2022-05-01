@@ -1,0 +1,15 @@
+@import '~bootstrap/scss/bootstrap.scss';
+.main{
+  @include media-breakpoint-down(md) {
+    padding-bottom: 55px;
+  }
+}
+
+
+
+
+
+
+
+
+

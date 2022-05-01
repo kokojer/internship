@@ -10,7 +10,7 @@ import MediaQuery from "react-responsive";
 export const Navbar = () => {
 
     return (
-        <nav>
+        <nav style={{background: 'white'}}>
             <Container>
                 <Row>
                     <MediaQuery minWidth={766}>

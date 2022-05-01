@@ -2,17 +2,18 @@ import {Accordion, Card, Dropdown} from "react-bootstrap";
 import {Arrowicon} from "../../../../icons/arrowicon";
 import {useState} from "react";
 import {NavigationItem} from "./navigationItem/navigationItem";
+import s from '../user-info.module.scss'
 export const UserNavigation = () => {
     let [show, setShow] = useState(true)
     function isOpen(){
         setShow(!show)
     }
     return (
-        <Accordion defaultActiveKey="0" style={{ border: '1px solid rgb(221, 224, 230'}} className='mb-4'>
+        <Accordion defaultActiveKey="0" style={{ border: '1px solid rgb(221, 224, 230'}} className='mb-xxl-4 mb-3'>
             <Card>
-                <Accordion.Toggle as={Card.Header} eventKey="0" className='d-flex justify-content-between align-items-center cur-point'
+                <Accordion.Toggle as={Card.Header} eventKey="0" className='d-flex justify-content-between align-items-center cur-point px-3 px-xl-4'
                                   onClick={isOpen} style={{background:'white'}}>
-                    <div>Navigation</div>
+                    <div className={s.navText}>Navigation</div>
                     <Arrowicon width='10' height='10' style={{transform: show ? 'rotate(180deg)' : ''}} />
                 </Accordion.Toggle>
                 <Accordion.Collapse eventKey="0">

@@ -39,12 +39,53 @@
   border-radius: 14px;
   font-size: 13px;
   color:white;
+  @include media-breakpoint-down(lg) {
+    padding: 1px 4px;
+    font-size: 11px;
+  }
 }
 
 .balance{
   color: #A1A5AE;
   font-size: 14px;
+  @include media-breakpoint-down(lg) {
+    font-size: 12px;
+  }
 }
+
+.navText{
+  font-size: 16px;
+  @include media-breakpoint-down(lg) {
+    font-size: 14px;
+  }
+}
+
+.thoughts{
+  @include media-breakpoint-down(lg) {
+    font-size: 14px;
+  }
+}
+
+textarea.textArea{
+  @include media-breakpoint-down(lg) {
+    font-size: 14px;
+  }
+}
+
+button.saveButton{
+  @include media-breakpoint-down(lg) {
+    font-size: 14px;
+  }
+}
+
+.userImg{
+  @include media-breakpoint-down(md) {
+    height: 100%;
+    justify-content: center;
+  }
+}
+
+
 
 
 
