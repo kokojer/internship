@@ -9,7 +9,7 @@ export const UserNavigation = () => {
         setShow(!show)
     }
     return (
-        <Accordion defaultActiveKey="0" style={{ border: '1px solid rgb(221, 224, 230'}} className='mb-xxl-4 mb-3'>
+        <Accordion defaultActiveKey="0" className='mb-xxl-4 mb-sm-3 mb-2'>
             <Card>
                 <Accordion.Toggle as={Card.Header} eventKey="0" className='d-flex justify-content-between align-items-center cur-point px-3 px-xl-4'
                                   onClick={isOpen} style={{background:'white'}}>

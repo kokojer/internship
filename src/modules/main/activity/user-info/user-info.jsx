@@ -6,10 +6,10 @@ export const UserInfo = () => {
 
     return (
         <Row>
-            <Col xs={5} md={4} lg={12} className='px-2 px-lg-3'>
+            <Col xs={12} sm={5} md={4} lg={12} className='px-2 px-lg-3 mb-2 mb-sm-0'>
                 <Userimg />
             </Col>
-            <Col xs={7} md={8} lg={12} className='px-2 px-lg-3'>
+            <Col xs={12} sm={7} md={8} lg={12} className='px-2 px-lg-3'>
                 <UserNavigation />
                 <UserThoughts />
             </Col>

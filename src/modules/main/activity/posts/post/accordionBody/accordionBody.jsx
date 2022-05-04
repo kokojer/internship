@@ -11,23 +11,23 @@ export const AccordionBody = ({photo, commentName, commentText, timePostComment,
             <ModalImg photo={photo} />
             {commentName && (
                 <div>
-                    <div className="d-flex align-items-center mb-3">
+                    <div className="d-flex align-items-center mb-2 mb-sm-3">
                         <Comments/>
-                        <div className="ml-2" style={{fontSize: '14px'}}><span style={{color: '#2375E1'}}
+                        <div className="ml-2"><span style={{color: '#2375E1'}}
                                                                                className={'cur-point ' + s.nameCommentator}>{`${commentName} ${commentSurname}`}</span> commented:
                         </div>
                     </div>
                     <div style={{borderLeft: '2px solid lightgray'}} className="pl-3 mb-3">
-                        <div style={{fontSize: '14px'}} className={s.comment}>
+                        <div className={s.comment}>
                             {commentText}
                         </div>
-                        <div className="" style={{color: '#6E7178', fontSize: '14px'}}>
+                        <div className="" style={{color: '#6E7178'}}>
                             {`— ${commentName}, ${timePostComment}`}
                         </div>
                     </div>
                 </div>
             )}
-            <div className="d-flex justify-content-between" style={{fontSize: '14px'}}>
+            <div className="d-flex justify-content-between">
                 <div className="d-flex">
                     <div className="d-flex mr-3 align-items-center cur-point">
                         <Eye/>

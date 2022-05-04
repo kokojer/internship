@@ -13,9 +13,9 @@ export const Main = () => {
         window.location.href = '/activity'
     }
     return (
-        <main style={{flex:'1 1 auto', minHeight: "100%"}} className={s.main}>
+        <div style={{flex:'1 1 auto', minHeight: "100%"}} className={s.main}>
             <Container>
-                <Row className='py-4 px-2'>
+                <Row className='py-2 py-sm-3 py-md-4 px-2'>
                     <Routes>
                         <Route path="/map" element={<Map/>}/>
                         <Route path="/time" element={<Time/>}/>
@@ -27,5 +27,5 @@ export const Main = () => {
                     </Routes>
                 </Row>
             </Container>
-        </main>
+        </div>
 )}

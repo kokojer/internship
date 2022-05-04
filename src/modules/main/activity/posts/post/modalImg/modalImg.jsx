@@ -17,9 +17,9 @@ export const ModalImg = ({photo}) => {
                 contentClassName={s.modalContent}
                 centered
             >
-                <Modal.Body className='p-2'>
+                <Modal.Body className='p-1 p-sm-2 h-100'>
                     <div className="d-flex justify-content-center">
-                        <img src={photo} alt="" className="img-fluid" style={{maxHeight:'90vh'}}/>
+                        <img src={photo} alt="" className="img-fluid" style={{maxHeight:'90vh', width:'100%'}}/>
                     </div>
                 </Modal.Body>
             </Modal>

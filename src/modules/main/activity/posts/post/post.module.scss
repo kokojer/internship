@@ -1,3 +1,5 @@
+@import '~bootstrap/scss/bootstrap.scss';
+
 .readPost:hover path{
   stroke: black;
 }
@@ -18,6 +20,9 @@
   -webkit-line-clamp: 3;
   -webkit-box-orient: vertical;
   max-height: 65px;
+  @include media-breakpoint-down(sm) {
+    max-height: 55px;
+  }
 }
 
 .imgContainer{
@@ -25,6 +30,9 @@
   justify-content: center;
   max-height: 500px;
   overflow: hidden;
+  @include media-breakpoint-down(sm) {
+    max-height: 350px;
+  }
 }
 
 .imgContainer img{
@@ -32,15 +40,26 @@
   object-fit: cover;
 }
 
-.dialog{
+div.dialog{
   display: flex;
   justify-content: center;
-  width:auto !important;
-  height: auto !important;
-  max-width: 80% !important;
-  max-height: 80% !important;
+  width: auto;
+  height: auto;
+  max-height: 80%;
+  max-width: none;
 }
 
-.modalContent{
-  width: auto !important;
+div.modalContent{
+  width: auto;
+  max-width: 99.9%;
+
+}
+
+
+
+.cardBody, .timePost{
+  font-size: 14px;
+  @include media-breakpoint-down(sm) {
+    font-size: 12px;
+  }
 }

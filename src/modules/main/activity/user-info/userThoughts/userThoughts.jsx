@@ -4,13 +4,14 @@ import {useState} from "react";
 import s from '../user-info.module.scss'
 import {useMediaQuery} from "react-responsive";
 export const UserThoughts = () => {
-    let [show, setShow] = useState(true)
+    const breakPointService = useMediaQuery({ minWidth: 1023 })
+    let [show, setShow] = useState(breakPointService)
     function isOpen(){
         setShow(!show)
     }
-    const breakPointService = useMediaQuery({ minWidth: 1023 })
+
     return (
-        <Accordion defaultActiveKey={breakPointService ? '0' : 'false'} style={{ border: '1px solid rgb(221, 224, 230'}} >
+        <Accordion defaultActiveKey={breakPointService ? '0' : 'false'}>
             <Card>
                 <Accordion.Toggle as={Card.Header} eventKey="0" className='d-flex justify-content-between align-items-center cur-point px-xl-4 px-3'
                                   onClick={isOpen} style={{background:'white'}}>
