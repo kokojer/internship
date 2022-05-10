@@ -3,6 +3,6 @@ export const Notes = () => {
 
     return (
         <Col>
-            gwghen4je
+            Notes
         </Col>
 )}

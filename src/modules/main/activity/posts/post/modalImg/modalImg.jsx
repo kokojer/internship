@@ -12,7 +12,8 @@ export const ModalImg = ({photo}) => {
             </div>
             <Modal
                 show={show}
-                onHide={() => setShow(false)}
+                onEnter = {() => console.log('hello')}
+                onHide={() => console.log(setShow(false))}
                 dialogClassName={s.dialog}
                 contentClassName={s.modalContent}
                 centered

@@ -3,6 +3,6 @@ export const Friends = () => {
 
     return (
         <Col>
-            3h5j4t4hg
+            Friends
         </Col>
 )}

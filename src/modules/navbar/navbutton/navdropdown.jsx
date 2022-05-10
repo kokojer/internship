@@ -1,85 +1,50 @@
 import {Dropdown} from "react-bootstrap";
-import s from './../../icons/icons.module.scss'
+import s from './../navbar.module.scss'
+import si from '../../icons/icons.module.scss'
 import React, {useState, useRef} from "react";
-
-import {Serviceicon} from "../../icons/serviceicon";
-import {Arrowicon} from "../../icons/arrowicon";
+import {ServiceIcon} from "../../icons/ServiceIcon";
+import {ArrowIcon} from "../../icons/ArrowIcon";
 import { useMediaQuery } from 'react-responsive'
 export const Navdropdown = () => {
     const breakPointService = useMediaQuery({ minWidth: 766 })
-
-
-    const CustomToggle = React.forwardRef(({ children, onClick }, ref) => (
-        <a
-            href=""
-            className={s.serviceDropdown + ' d-flex align-items-center h-100 flex-column-reverse flex-sm-row justify-content-center'}
-            ref={ref}
-            onClick={(e) => {
-                e.preventDefault();
-                onClick(e);
-            }}
-        >
-            {children}
-        </a>
-    ));
-
-    const CustomMenu = React.forwardRef(
-        ({ children, style, className, 'aria-labelledby': labeledBy }, ref) => {
-            const [value, setValue] = useState('');
-            let translate = breakPointService ? { transform: 'translate(0px, 53px)'} : { transform: 'translate(0px, -66px)'}
-            return (
-                <div
-                    ref={ref}
-                    style={Object.assign(style, translate)}
-                    className={className}
-                    aria-labelledby={labeledBy}
-                >
-                    <ul className="list-unstyled mb-0">
-                        {React.Children.toArray(children).filter(
-                            (child) =>
-                                !value || child.props.children.toLowerCase().startsWith(value),
-                        )}
-                    </ul>
-                </div>
-            );
-        },
-    );
+    let translate = breakPointService ? { transform: 'translate(0px, 53px)'} : { transform: 'translate(0px, -66px)'}
+    let [show,setShow] = useState(false)
     let upOrDown = breakPointService ? 'down' : 'up';
     const drop = useRef(null);
     function classToggle(isOpen){
-
-        if(isOpen === true){
+        setTimeout(() => {
+            setShow(!show)
+        },0)
+        if(isOpen === true ){
             setTimeout(() => {
-                drop.current.classList.add(s.show)
+                drop.current.classList.add(si.show)
             },0)
-
         }
         if(isOpen === false){
-            drop.current.classList.remove(s.show)
+            drop.current.classList.remove(si.show)
         }
-
     }
 
     return (
-        <Dropdown onToggle={classToggle} className='h-100 d-flex align-items-center mr-1 mr-sm-0' drop={upOrDown} ref={drop}>
-            <Dropdown.Toggle as={CustomToggle} id="dropdown-custom-components" >
-                <Serviceicon />
-                <Arrowicon width='11' height='8'/>
+        <Dropdown onToggle={classToggle} className='h-100 d-flex align-items-center mr-1 mr-sm-0' drop={upOrDown} ref={drop} show={show}>
+            <Dropdown.Toggle variant={null} className={`${s.serviceDropdown} ${si.serviceDropdown} d-flex align-items-center h-100 flex-column-reverse flex-sm-row justify-content-center`}>
+                <ServiceIcon />
+                <ArrowIcon width='11' height='8' className='ml-0 ml-sm-1 mb-1 mb-sm-0'/>
             </Dropdown.Toggle>
 
-            <Dropdown.Menu as={CustomMenu}>
-                <div className='p-3 d-flex justify-content-center align-items-start flex-column'>
-                    <div className="custom-control custom-switch">
-                        <input type="checkbox" className="custom-control-input" id="customSwitch1" style={{cursor:"pointer"}}/>
-                        <label className={"custom-control-label " + s.label} htmlFor="customSwitch1" style={{cursor:"pointer"}}> Lorem ipsum dolor sit amet</label>
+            <Dropdown.Menu style={{maxWidth:'12rem', ...translate}}>
+                <div className='p-3 d-flex justify-content-center align-items-start flex-column' >
+                    <div className={`custom-control custom-switch ${s.navDropdownItem}`}>
+                        <input type="checkbox" className="custom-control-input cur-point" id="customSwitch1"/>
+                        <label className="custom-control-label cur-point" htmlFor="customSwitch1">Lorem ipsum dolor sit amet</label>
                     </div>
-                    <div className="custom-control custom-switch">
-                        <input type="checkbox" className="custom-control-input" id="customSwitch2" style={{cursor:"pointer"}}/>
-                        <label className="custom-control-label" htmlFor="customSwitch2" style={{cursor:"pointer",fontSize:'15px'}}> Text</label>
+                    <div className={`custom-control custom-switch cur-point ${s.navDropdownItem}`}>
+                        <input type="checkbox" className="custom-control-input cur-point" id="customSwitch2"/>
+                        <label className="custom-control-label cur-point" htmlFor="customSwitch2">Text</label>
                     </div>
-                    <div className="custom-control custom-switch d-flex align-items-center">
-                        <input type="checkbox" className="custom-control-input" id="customSwitch3" style={{cursor:"pointer"}}/>
-                        <label className="custom-control-label" htmlFor="customSwitch3" style={{cursor:"pointer"}}> Text Text</label>
+                    <div className={`custom-control custom-switch d-flex align-items-center ${s.navDropdownItem}`}>
+                        <input type="checkbox" className="custom-control-input cur-point" id="customSwitch3"/>
+                        <label className="custom-control-label cur-point" htmlFor="customSwitch3">Text Text</label>
                     </div>
                 </div>
             </Dropdown.Menu>

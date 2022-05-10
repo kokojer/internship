@@ -1,7 +1,7 @@
 import s from "../post.module.scss";
-import {Comments} from "../../../../../icons/comments";
-import {Eye} from "../../../../../icons/eye";
-import {Arrowicon} from "../../../../../icons/arrowicon";
+import {CommentsIcon} from "../../../../../icons/CommentsIcon";
+import {EyeIcon} from "../../../../../icons/EyeIcon";
+import {ArrowIcon} from "../../../../../icons/ArrowIcon";
 import {ModalImg} from "../modalImg/modalImg";
 
 export const AccordionBody = ({photo, commentName, commentText, timePostComment, commentSurname, views, comments}) => {
@@ -12,7 +12,7 @@ export const AccordionBody = ({photo, commentName, commentText, timePostComment,
             {commentName && (
                 <div>
                     <div className="d-flex align-items-center mb-2 mb-sm-3">
-                        <Comments/>
+                        <CommentsIcon/>
                         <div className="ml-2"><span style={{color: '#2375E1'}}
                                                                                className={'cur-point ' + s.nameCommentator}>{`${commentName} ${commentSurname}`}</span> commented:
                         </div>
@@ -30,17 +30,17 @@ export const AccordionBody = ({photo, commentName, commentText, timePostComment,
             <div className="d-flex justify-content-between">
                 <div className="d-flex">
                     <div className="d-flex mr-3 align-items-center cur-point">
-                        <Eye/>
+                        <EyeIcon/>
                         <div className="ml-2">{views}</div>
                     </div>
                     <div className="d-flex align-items-center cur-point">
-                        <Comments/>
+                        <CommentsIcon/>
                         <div className="ml-2">{comments}</div>
                     </div>
                 </div>
                 <div className={"d-flex align-items-center cur-point " + s.readPost}>
                     <div className={"mr-2 " + s.textReadPost}>Read post</div>
-                    <Arrowicon width='10' height='10' style={{transform: 'rotate(-90deg)'}}/>
+                    <ArrowIcon width='10' height='10' style={{transform: 'rotate(-90deg)'}}/>
                 </div>
             </div>
         </>

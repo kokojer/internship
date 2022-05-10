@@ -1,51 +1,37 @@
 @import '~bootstrap/scss/bootstrap.scss';
 
-.notes {
+.notes, .serviceDropdown .arrowIcon path {
   stroke: gray;
 }
-.notes:hover {
+.notes:hover, .buttonBack:hover .arrowIcon path {
   stroke: black;
 }
 
-.serviceDropdown .serviceIcon path {
+.serviceDropdown .serviceIcon path, .bell {
   fill: gray;
 }
-.serviceDropdown .arrowIcon path {
-  stroke: gray;
+
+.serviceDropdown:hover .serviceIcon path, .notif:hover .bell {
+  fill: black;
 }
+
+.show .serviceIcon path, .show .notif path{
+  fill: #2375E1 !important;
+}
+
+.show .arrowIcon path{
+  stroke: #2375E1 !important;
+}
+
 .serviceDropdown .arrowIcon {
   @include media-breakpoint-down(sm) {
     transform: rotate(180deg);
 
   }
 }
-.serviceDropdown:hover .serviceIcon path {
-  fill: black;
-}
+
 .serviceDropdown:hover .arrowIcon path {
   @include media-breakpoint-up(md) {
     stroke: black;
   }
-}
-
-.show .serviceIcon path {
-  fill: #2375E1 !important;
-}
-.show .notif path {
-  fill: #2375E1 !important;
-}
-.show .arrowIcon path {
-  stroke: #2375E1 !important;
-}
-
-.buttonBack:hover .arrowIcon path {
-  stroke: black;
-}
-
-.bell {
-  fill: gray;
-}
-
-.notif:hover .bell {
-  fill: black;
 }

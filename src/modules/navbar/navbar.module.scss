@@ -1,18 +1,17 @@
 @import '~bootstrap/scss/bootstrap.scss';
 nav{
-  box-shadow: 0px 5px 11px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 5px 11px rgba(0, 0, 0, 0.1);
   position: relative;
   z-index:99;
+  @include media-breakpoint-down(sm) {
+      border-top: 1px solid lightgray;
+      position: fixed;
+      bottom: 0;
+      width: 100%;
+      background-color: #fff;
+    }
 }
-@include media-breakpoint-down(sm) {
-  nav{
-    border-top: 1px solid lightgray;
-    position: fixed;
-    bottom: 0;
-    width: 100%;
-    background-color: #fff;
-  }
-}
+
 .navbutton.activeStyle{
   fill: #2375E1 !important;
   border-bottom: 3px solid #2375E1;
@@ -32,6 +31,7 @@ nav{
     border-top: 3px solid #2375E1;
   }
 }
+
 .navbutton{
   display: flex;
   justify-content: center;
@@ -43,13 +43,18 @@ nav{
   letter-spacing: 0.015em;
   color: #6E7178;
   fill:gray;
-  @include media-breakpoint-down(xs) {
-    font-size: 11px;
+  &:hover {
+    text-decoration: none;
+    @include media-breakpoint-up(md) {
+      fill: black;
+    }
   }
   div{
     margin-top: 1px;
   }
-
+  @include media-breakpoint-down(xs) {
+    font-size: 11px;
+  }
   @include media-breakpoint-down(sm) {
     border-top: 3px solid transparent;
     border-bottom: none;
@@ -61,15 +66,19 @@ nav{
   }
 }
 
+button.serviceDropdown {
+  border: none !important;
+  outline: none !important;
+  box-shadow: none !important;
+}
 
+.serviceDropdown:after {
+  display: none !important;
+}
 
-    .navbutton:hover {
-      text-decoration: none;
-      @include media-breakpoint-up(md) {
-        fill: black;
-      }
-    }
-
+.navDropdownItem{
+  max-width: 10rem;
+}
 
 
 

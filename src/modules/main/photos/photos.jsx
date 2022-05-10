@@ -3,6 +3,6 @@ export const Photos = () => {
 
     return (
         <Col>
-            3rh3j43
+            Photos
         </Col>
 )}
