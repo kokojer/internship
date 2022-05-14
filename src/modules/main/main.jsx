@@ -12,14 +12,13 @@ import s from './main.module.scss'
 
 
 export const Main = () => {
-    if(/.+\/$/.test(window.location.href)){
-        window.location.href = '/activity'
-    }
+    
     return (
         <div style={{flex:'1 1 auto', minHeight: "100%"}} className={s.main}>
             <Container>
                 <Row className='py-2 py-sm-3 py-md-4 px-2'>
                     <Routes>
+                        <Route path="/" element={<Activity/>}/>
                         <Route path="/map" element={<Map/>}/>
                         <Route path="/time" element={<Time/>}/>
                         <Route path="/activity" element={<Activity/>}/>

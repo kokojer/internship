@@ -8,7 +8,8 @@ export const Navbutton = ({textButton, img}) => {
 
     return (
         <NavLink to={textButton.toLowerCase()} className={({ isActive }) =>
-            isActive && textButton !== 'Notes' ? `${s.activeStyle} ${staticStylesTextButton}` : isActive ? `${s.activeNotesStyle} ${staticStylesTextButton}`: staticStylesTextButton}>
+            (isActive && textButton !== 'Notes') || textButton === 'Activity' && /.+\/$/.test(window.location.href) ? `${s.activeStyle} ${staticStylesTextButton}` :
+                isActive ? `${s.activeNotesStyle} ${staticStylesTextButton}`: staticStylesTextButton}>
             {img}
             <div className="ml-md-2 ml-0">{textButton}</div>
         </NavLink>

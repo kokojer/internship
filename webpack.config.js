@@ -2,13 +2,16 @@
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin')
 
+const isDevelopment = process.env.npm_lifecycle_event === 'serve';
+const isProduction = !isDevelopment;
+require('dotenv').config()
+console.log(process.env.npm_lifecycle_event)
 module.exports = {
-  mode:'development',
+  mode: isProduction ? 'production' : 'development',
   entry:'./src/index.js',
-  devtool:'eval-source-map',
+  devtool: isDevelopment ? 'eval-source-map' :  false,
   output: {
-    publicPath: '/',
-    path: '/',
+    publicPath: isProduction ? './' : '/',
     filename: 'index.bundle.js',
     environment: {
       arrowFunction: false,
@@ -23,7 +26,7 @@ module.exports = {
   //webpack 5 comes with devServer which loads in development mode
   devServer: {
     port: 3000,
-    // static: '/dist',
+    static: '/dist',
     historyApiFallback: true,
     // watchContentBase: true,
     hot: true,

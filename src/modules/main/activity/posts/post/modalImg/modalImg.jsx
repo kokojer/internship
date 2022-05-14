@@ -7,20 +7,19 @@ export const ModalImg = ({photo}) => {
 
     return (
         <>
-            <div className={"mb-3 " + s.imgContainer}>
+            <div className={`mb-3 ${s.imgContainer}`}>
                 <img src={photo} alt="" className='img-fluid cur-point' onClick={() => setShow(true)}/>
             </div>
             <Modal
                 show={show}
-                onEnter = {() => console.log('hello')}
-                onHide={() => console.log(setShow(false))}
+                onHide={() => setShow(false)}
                 dialogClassName={s.dialog}
                 contentClassName={s.modalContent}
                 centered
             >
                 <Modal.Body className='p-1 p-sm-2 h-100'>
                     <div className="d-flex justify-content-center">
-                        <img src={photo} alt="" className="img-fluid" style={{maxHeight:'90vh', width:'100%'}}/>
+                        <img src={photo} alt="" className="img-fluid w-100" style={{maxHeight:'90vh'}}/>
                     </div>
                 </Modal.Body>
             </Modal>

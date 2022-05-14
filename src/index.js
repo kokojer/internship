@@ -3,7 +3,7 @@ import "regenerator-runtime/runtime";
 
 import React, { StrictMode } from 'react'
 import ReactDOM from 'react-dom';
-import { BrowserRouter } from "react-router-dom";
+import {HashRouter} from "react-router-dom";
 
 // components
 import { App } from './App'
@@ -16,8 +16,8 @@ import 'normalize.css';
 
 ReactDOM.render(
   <StrictMode>
-      <BrowserRouter>
-          <App />
-      </BrowserRouter>
+            <HashRouter>
+                <App />
+            </HashRouter>
   </StrictMode>, document.getElementById('root')
 )

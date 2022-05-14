@@ -1,4 +1,4 @@
-import {Container, Row, Col, DropdownButton, Dropdown} from "react-bootstrap";
+import {Col} from "react-bootstrap";
 export const Account = () => {
 
     return (
